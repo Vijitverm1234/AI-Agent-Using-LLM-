@@ -1,8 +1,8 @@
 import { NonRetriableError } from "inngest";
 import User from "../../models/user.js";
-import { sendMail } from "../../utils/mailer";
-import { inngest } from "../client";
-export const onUserSignUp=inngest.createFunction(
+import { sendMail } from "../../utils/mailer.js";
+import { inngest } from "../client.js";
+export const onUserSignup=inngest.createFunction(
     {id:"on-user-signup",retries:2},
     {event:"user/signup"},
     async({event,step})=>{
